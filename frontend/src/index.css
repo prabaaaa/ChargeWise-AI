@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Core ChargeWise EV OS Palette */
+  --color-ev-obsidian: #080d12;
+  --color-ev-carbon: #111a22;
+  --color-ev-navy: #0b1724;
+  --color-ev-slate: #253441;
+  --color-ev-cyan: #20e3ff;
+  --color-ev-teal: #00d6b3;
+  --color-ev-green: #7cff6b;
+  --color-ev-ice: #eaf5fa;
+  --color-ev-silver: #91a5b3;
+  --color-ev-amber: #f59e0b;
+  --color-ev-red: #ef4444;
+
+  /* Backward Compatibility Mappings for Tailwind Utilities */
+  --color-navy-950: #05080c;
+  --color-navy-900: #080d12;
+  --color-navy-850: #0d141b;
+  --color-navy-800: #111a22;
+  --color-navy-700: #172330;
+  --color-navy-600: #253441;
+
+  --color-graphite-900: #0c1218;
+  --color-graphite-800: #111a22;
+  --color-graphite-700: #1a2632;
+  --color-graphite-600: #273748;
+
+  --color-teal-500: #20e3ff;
+  --color-teal-400: #00d6b3;
+  --color-teal-300: #7cff6b;
+
+  --color-electric-green: #20e3ff;
+  --color-amber-warn: #f59e0b;
+  --color-red-alert: #ef4444;
+  --color-success: #7cff6b;
+}
+
+body {
+  @apply bg-[#080d12] text-[#eaf5fa] font-sans antialiased;
+  margin: 0;
+  background-color: #080d12;
+  color: #eaf5fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Subtle Technical EV Grid Background */
+.ev-tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(37, 52, 65, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 52, 65, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Carbon Fiber Matte Texture */
+.ev-carbon-surface {
+  background-color: #111a22;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(32, 227, 255, 0.05) 0%, transparent 70%),
+    linear-gradient(135deg, rgba(23, 35, 48, 0.4) 0%, rgba(17, 26, 34, 0.9) 100%);
+}
+
+/* Custom Automotive Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #080d12;
+}
+::-webkit-scrollbar-thumb {
+  background: #253441;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #20e3ff;
+}
+
+.leaflet-container {
+  background: #080d12 !important;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(37, 52, 65, 0.6);
+}
+
+/* Automotive Charging Halo & Glow Animations */
+@keyframes evGlowCyan {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(32, 227, 255, 0.35);
+    border-color: #20e3ff;
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(32, 227, 255, 0.75);
+    border-color: #7cff6b;
+  }
+}
+
+@keyframes evGlowRed {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(239, 68, 68, 0.35);
+    border-color: #ef4444;
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(239, 68, 68, 0.75);
+    border-color: #f87171;
+  }
+}
+
+.animate-pulse-teal {
+  animation: evGlowCyan 2.2s infinite ease-in-out;
+}
+
+.animate-pulse-red {
+  animation: evGlowRed 1.4s infinite ease-in-out;
+}
